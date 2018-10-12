@@ -5,4 +5,17 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: test
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: test
+    ports:
+      - "8080:80"
+    depends_on :
+      - mariadb
+
+
+
 
